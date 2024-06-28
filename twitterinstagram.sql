@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 16.3
--- Dumped by pg_dump version 16.2
+-- Dumped by pg_dump version 16.0
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -4221,6 +4221,14 @@ ALTER TABLE ONLY twitter.tweet_type
 
 ALTER TABLE ONLY twitter.tweets_private
     ADD CONSTRAINT tweets_private_user_id_fkey FOREIGN KEY (user_id) REFERENCES twitter.user_private(user_id);
+
+
+--
+-- Name: tweets tweets_user_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: avnadmin
+--
+
+ALTER TABLE ONLY twitter.tweets
+    ADD CONSTRAINT tweets_user_id_fkey FOREIGN KEY (user_id) REFERENCES twitter.users(user_id);
 
 
 --

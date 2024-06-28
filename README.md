@@ -1,10 +1,10 @@
 # Twitter Forensik
 
 ## Import db command
-psql -h twitter-forensik-twitter-forensik.d.aivencloud.com -p 15675 -d defaultdb -U avnadmin -f twitterForensik.sql
+psql -h twitter-forensik-twitter-forensik.d.aivencloud.com -p 15675 -d defaultdb -U avnadmin -f twitterinstagram.sql
 
 ## Export db command
-pg_dump -U avnadmin -h twitter-forensik-twitter-forensik.d.aivencloud.com -p 15675 -d defaultdb > twitterForensik.sql
+pg_dump -U avnadmin -h twitter-forensik-twitter-forensik.d.aivencloud.com -p 15675 -d defaultdb > twitterinstagram.sql
 
 
 ## How to install

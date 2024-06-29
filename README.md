@@ -1,4 +1,4 @@
-# Twitter Forensik
+# Twitter Instagram
 
 ## Import db command
 psql -h twitter-forensik-twitter-forensik.d.aivencloud.com -p 15675 -d defaultdb -U avnadmin -f twitterinstagram.sql

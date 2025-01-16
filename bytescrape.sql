@@ -17,22 +17,22 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: instagram; Type: SCHEMA; Schema: -; Owner: avnadmin
+-- Name: instagram; Type: SCHEMA; Schema: -; Owner: postgres
 --
 
 CREATE SCHEMA instagram;
 
 
-ALTER SCHEMA instagram OWNER TO avnadmin;
+ALTER SCHEMA instagram OWNER TO postgres;
 
 --
--- Name: twitter; Type: SCHEMA; Schema: -; Owner: avnadmin
+-- Name: twitter; Type: SCHEMA; Schema: -; Owner: postgres
 --
 
 CREATE SCHEMA twitter;
 
 
-ALTER SCHEMA twitter OWNER TO avnadmin;
+ALTER SCHEMA twitter OWNER TO postgres;
 
 --
 -- Name: uuid-ossp; Type: EXTENSION; Schema: -; Owner: -
@@ -53,7 +53,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: account_history_login_private; Type: TABLE; Schema: instagram; Owner: avnadmin
+-- Name: account_history_login_private; Type: TABLE; Schema: instagram; Owner: postgres
 --
 
 CREATE TABLE instagram.account_history_login_private (
@@ -64,10 +64,10 @@ CREATE TABLE instagram.account_history_login_private (
 );
 
 
-ALTER TABLE instagram.account_history_login_private OWNER TO avnadmin;
+ALTER TABLE instagram.account_history_login_private OWNER TO postgres;
 
 --
--- Name: account_history_login_private_ah_lp_id_seq; Type: SEQUENCE; Schema: instagram; Owner: avnadmin
+-- Name: account_history_login_private_ah_lp_id_seq; Type: SEQUENCE; Schema: instagram; Owner: postgres
 --
 
 CREATE SEQUENCE instagram.account_history_login_private_ah_lp_id_seq
@@ -79,17 +79,17 @@ CREATE SEQUENCE instagram.account_history_login_private_ah_lp_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE instagram.account_history_login_private_ah_lp_id_seq OWNER TO avnadmin;
+ALTER SEQUENCE instagram.account_history_login_private_ah_lp_id_seq OWNER TO postgres;
 
 --
--- Name: account_history_login_private_ah_lp_id_seq; Type: SEQUENCE OWNED BY; Schema: instagram; Owner: avnadmin
+-- Name: account_history_login_private_ah_lp_id_seq; Type: SEQUENCE OWNED BY; Schema: instagram; Owner: postgres
 --
 
 ALTER SEQUENCE instagram.account_history_login_private_ah_lp_id_seq OWNED BY instagram.account_history_login_private.ah_lp_id;
 
 
 --
--- Name: followers_private; Type: TABLE; Schema: instagram; Owner: avnadmin
+-- Name: followers_private; Type: TABLE; Schema: instagram; Owner: postgres
 --
 
 CREATE TABLE instagram.followers_private (
@@ -100,10 +100,10 @@ CREATE TABLE instagram.followers_private (
 );
 
 
-ALTER TABLE instagram.followers_private OWNER TO avnadmin;
+ALTER TABLE instagram.followers_private OWNER TO postgres;
 
 --
--- Name: followers_private_fs_id_seq; Type: SEQUENCE; Schema: instagram; Owner: avnadmin
+-- Name: followers_private_fs_id_seq; Type: SEQUENCE; Schema: instagram; Owner: postgres
 --
 
 CREATE SEQUENCE instagram.followers_private_fs_id_seq
@@ -115,17 +115,17 @@ CREATE SEQUENCE instagram.followers_private_fs_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE instagram.followers_private_fs_id_seq OWNER TO avnadmin;
+ALTER SEQUENCE instagram.followers_private_fs_id_seq OWNER TO postgres;
 
 --
--- Name: followers_private_fs_id_seq; Type: SEQUENCE OWNED BY; Schema: instagram; Owner: avnadmin
+-- Name: followers_private_fs_id_seq; Type: SEQUENCE OWNED BY; Schema: instagram; Owner: postgres
 --
 
 ALTER SEQUENCE instagram.followers_private_fs_id_seq OWNED BY instagram.followers_private.fs_id;
 
 
 --
--- Name: following_private; Type: TABLE; Schema: instagram; Owner: avnadmin
+-- Name: following_private; Type: TABLE; Schema: instagram; Owner: postgres
 --
 
 CREATE TABLE instagram.following_private (
@@ -136,10 +136,10 @@ CREATE TABLE instagram.following_private (
 );
 
 
-ALTER TABLE instagram.following_private OWNER TO avnadmin;
+ALTER TABLE instagram.following_private OWNER TO postgres;
 
 --
--- Name: following_private_fg_id_seq; Type: SEQUENCE; Schema: instagram; Owner: avnadmin
+-- Name: following_private_fg_id_seq; Type: SEQUENCE; Schema: instagram; Owner: postgres
 --
 
 CREATE SEQUENCE instagram.following_private_fg_id_seq
@@ -151,17 +151,17 @@ CREATE SEQUENCE instagram.following_private_fg_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE instagram.following_private_fg_id_seq OWNER TO avnadmin;
+ALTER SEQUENCE instagram.following_private_fg_id_seq OWNER TO postgres;
 
 --
--- Name: following_private_fg_id_seq; Type: SEQUENCE OWNED BY; Schema: instagram; Owner: avnadmin
+-- Name: following_private_fg_id_seq; Type: SEQUENCE OWNED BY; Schema: instagram; Owner: postgres
 --
 
 ALTER SEQUENCE instagram.following_private_fg_id_seq OWNED BY instagram.following_private.fg_id;
 
 
 --
--- Name: hashtags; Type: TABLE; Schema: instagram; Owner: avnadmin
+-- Name: hashtags; Type: TABLE; Schema: instagram; Owner: postgres
 --
 
 CREATE TABLE instagram.hashtags (
@@ -170,10 +170,10 @@ CREATE TABLE instagram.hashtags (
 );
 
 
-ALTER TABLE instagram.hashtags OWNER TO avnadmin;
+ALTER TABLE instagram.hashtags OWNER TO postgres;
 
 --
--- Name: posts_private; Type: TABLE; Schema: instagram; Owner: avnadmin
+-- Name: posts_private; Type: TABLE; Schema: instagram; Owner: postgres
 --
 
 CREATE TABLE instagram.posts_private (
@@ -186,10 +186,10 @@ CREATE TABLE instagram.posts_private (
 );
 
 
-ALTER TABLE instagram.posts_private OWNER TO avnadmin;
+ALTER TABLE instagram.posts_private OWNER TO postgres;
 
 --
--- Name: user_private; Type: TABLE; Schema: instagram; Owner: avnadmin
+-- Name: user_private; Type: TABLE; Schema: instagram; Owner: postgres
 --
 
 CREATE TABLE instagram.user_private (
@@ -210,10 +210,10 @@ CREATE TABLE instagram.user_private (
 );
 
 
-ALTER TABLE instagram.user_private OWNER TO avnadmin;
+ALTER TABLE instagram.user_private OWNER TO postgres;
 
 --
--- Name: instagram_private; Type: VIEW; Schema: instagram; Owner: avnadmin
+-- Name: instagram_private; Type: VIEW; Schema: instagram; Owner: postgres
 --
 
 CREATE VIEW instagram.instagram_private AS
@@ -240,10 +240,10 @@ CREATE VIEW instagram.instagram_private AS
      JOIN instagram.user_private up ON ((pospr.user_id = up.user_id)));
 
 
-ALTER VIEW instagram.instagram_private OWNER TO avnadmin;
+ALTER VIEW instagram.instagram_private OWNER TO postgres;
 
 --
--- Name: post_hashtag; Type: TABLE; Schema: instagram; Owner: avnadmin
+-- Name: post_hashtag; Type: TABLE; Schema: instagram; Owner: postgres
 --
 
 CREATE TABLE instagram.post_hashtag (
@@ -253,10 +253,10 @@ CREATE TABLE instagram.post_hashtag (
 );
 
 
-ALTER TABLE instagram.post_hashtag OWNER TO avnadmin;
+ALTER TABLE instagram.post_hashtag OWNER TO postgres;
 
 --
--- Name: post_sentiment; Type: TABLE; Schema: instagram; Owner: avnadmin
+-- Name: post_sentiment; Type: TABLE; Schema: instagram; Owner: postgres
 --
 
 CREATE TABLE instagram.post_sentiment (
@@ -266,10 +266,10 @@ CREATE TABLE instagram.post_sentiment (
 );
 
 
-ALTER TABLE instagram.post_sentiment OWNER TO avnadmin;
+ALTER TABLE instagram.post_sentiment OWNER TO postgres;
 
 --
--- Name: post_type; Type: TABLE; Schema: instagram; Owner: avnadmin
+-- Name: post_type; Type: TABLE; Schema: instagram; Owner: postgres
 --
 
 CREATE TABLE instagram.post_type (
@@ -279,10 +279,10 @@ CREATE TABLE instagram.post_type (
 );
 
 
-ALTER TABLE instagram.post_type OWNER TO avnadmin;
+ALTER TABLE instagram.post_type OWNER TO postgres;
 
 --
--- Name: posts; Type: TABLE; Schema: instagram; Owner: avnadmin
+-- Name: posts; Type: TABLE; Schema: instagram; Owner: postgres
 --
 
 CREATE TABLE instagram.posts (
@@ -296,10 +296,10 @@ CREATE TABLE instagram.posts (
 );
 
 
-ALTER TABLE instagram.posts OWNER TO avnadmin;
+ALTER TABLE instagram.posts OWNER TO postgres;
 
 --
--- Name: users; Type: TABLE; Schema: instagram; Owner: avnadmin
+-- Name: users; Type: TABLE; Schema: instagram; Owner: postgres
 --
 
 CREATE TABLE instagram.users (
@@ -314,10 +314,10 @@ CREATE TABLE instagram.users (
 );
 
 
-ALTER TABLE instagram.users OWNER TO avnadmin;
+ALTER TABLE instagram.users OWNER TO postgres;
 
 --
--- Name: instagram_public; Type: VIEW; Schema: instagram; Owner: avnadmin
+-- Name: instagram_public; Type: VIEW; Schema: instagram; Owner: postgres
 --
 
 CREATE VIEW instagram.instagram_public AS
@@ -349,10 +349,10 @@ CREATE VIEW instagram.instagram_public AS
      JOIN instagram.post_type posty ON ((posty.post_id = pos.post_id)));
 
 
-ALTER VIEW instagram.instagram_public OWNER TO avnadmin;
+ALTER VIEW instagram.instagram_public OWNER TO postgres;
 
 --
--- Name: followers_private; Type: TABLE; Schema: twitter; Owner: avnadmin
+-- Name: followers_private; Type: TABLE; Schema: twitter; Owner: postgres
 --
 
 CREATE TABLE twitter.followers_private (
@@ -363,10 +363,10 @@ CREATE TABLE twitter.followers_private (
 );
 
 
-ALTER TABLE twitter.followers_private OWNER TO avnadmin;
+ALTER TABLE twitter.followers_private OWNER TO postgres;
 
 --
--- Name: followers_private_fs_id_seq; Type: SEQUENCE; Schema: twitter; Owner: avnadmin
+-- Name: followers_private_fs_id_seq; Type: SEQUENCE; Schema: twitter; Owner: postgres
 --
 
 CREATE SEQUENCE twitter.followers_private_fs_id_seq
@@ -378,17 +378,17 @@ CREATE SEQUENCE twitter.followers_private_fs_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE twitter.followers_private_fs_id_seq OWNER TO avnadmin;
+ALTER SEQUENCE twitter.followers_private_fs_id_seq OWNER TO postgres;
 
 --
--- Name: followers_private_fs_id_seq; Type: SEQUENCE OWNED BY; Schema: twitter; Owner: avnadmin
+-- Name: followers_private_fs_id_seq; Type: SEQUENCE OWNED BY; Schema: twitter; Owner: postgres
 --
 
 ALTER SEQUENCE twitter.followers_private_fs_id_seq OWNED BY twitter.followers_private.fs_id;
 
 
 --
--- Name: following_private; Type: TABLE; Schema: twitter; Owner: avnadmin
+-- Name: following_private; Type: TABLE; Schema: twitter; Owner: postgres
 --
 
 CREATE TABLE twitter.following_private (
@@ -399,10 +399,10 @@ CREATE TABLE twitter.following_private (
 );
 
 
-ALTER TABLE twitter.following_private OWNER TO avnadmin;
+ALTER TABLE twitter.following_private OWNER TO postgres;
 
 --
--- Name: following_private_fg_id_seq; Type: SEQUENCE; Schema: twitter; Owner: avnadmin
+-- Name: following_private_fg_id_seq; Type: SEQUENCE; Schema: twitter; Owner: postgres
 --
 
 CREATE SEQUENCE twitter.following_private_fg_id_seq
@@ -414,17 +414,17 @@ CREATE SEQUENCE twitter.following_private_fg_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE twitter.following_private_fg_id_seq OWNER TO avnadmin;
+ALTER SEQUENCE twitter.following_private_fg_id_seq OWNER TO postgres;
 
 --
--- Name: following_private_fg_id_seq; Type: SEQUENCE OWNED BY; Schema: twitter; Owner: avnadmin
+-- Name: following_private_fg_id_seq; Type: SEQUENCE OWNED BY; Schema: twitter; Owner: postgres
 --
 
 ALTER SEQUENCE twitter.following_private_fg_id_seq OWNED BY twitter.following_private.fg_id;
 
 
 --
--- Name: ip_audit_private; Type: TABLE; Schema: twitter; Owner: avnadmin
+-- Name: ip_audit_private; Type: TABLE; Schema: twitter; Owner: postgres
 --
 
 CREATE TABLE twitter.ip_audit_private (
@@ -435,10 +435,10 @@ CREATE TABLE twitter.ip_audit_private (
 );
 
 
-ALTER TABLE twitter.ip_audit_private OWNER TO avnadmin;
+ALTER TABLE twitter.ip_audit_private OWNER TO postgres;
 
 --
--- Name: ip_audit_private_ip_ap_id_seq; Type: SEQUENCE; Schema: twitter; Owner: avnadmin
+-- Name: ip_audit_private_ip_ap_id_seq; Type: SEQUENCE; Schema: twitter; Owner: postgres
 --
 
 CREATE SEQUENCE twitter.ip_audit_private_ip_ap_id_seq
@@ -450,17 +450,17 @@ CREATE SEQUENCE twitter.ip_audit_private_ip_ap_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE twitter.ip_audit_private_ip_ap_id_seq OWNER TO avnadmin;
+ALTER SEQUENCE twitter.ip_audit_private_ip_ap_id_seq OWNER TO postgres;
 
 --
--- Name: ip_audit_private_ip_ap_id_seq; Type: SEQUENCE OWNED BY; Schema: twitter; Owner: avnadmin
+-- Name: ip_audit_private_ip_ap_id_seq; Type: SEQUENCE OWNED BY; Schema: twitter; Owner: postgres
 --
 
 ALTER SEQUENCE twitter.ip_audit_private_ip_ap_id_seq OWNED BY twitter.ip_audit_private.ip_ap_id;
 
 
 --
--- Name: keywords; Type: TABLE; Schema: twitter; Owner: avnadmin
+-- Name: keywords; Type: TABLE; Schema: twitter; Owner: postgres
 --
 
 CREATE TABLE twitter.keywords (
@@ -469,10 +469,10 @@ CREATE TABLE twitter.keywords (
 );
 
 
-ALTER TABLE twitter.keywords OWNER TO avnadmin;
+ALTER TABLE twitter.keywords OWNER TO postgres;
 
 --
--- Name: tweet_keyword; Type: TABLE; Schema: twitter; Owner: avnadmin
+-- Name: tweet_keyword; Type: TABLE; Schema: twitter; Owner: postgres
 --
 
 CREATE TABLE twitter.tweet_keyword (
@@ -482,10 +482,10 @@ CREATE TABLE twitter.tweet_keyword (
 );
 
 
-ALTER TABLE twitter.tweet_keyword OWNER TO avnadmin;
+ALTER TABLE twitter.tweet_keyword OWNER TO postgres;
 
 --
--- Name: tweet_sentiment; Type: TABLE; Schema: twitter; Owner: avnadmin
+-- Name: tweet_sentiment; Type: TABLE; Schema: twitter; Owner: postgres
 --
 
 CREATE TABLE twitter.tweet_sentiment (
@@ -495,10 +495,10 @@ CREATE TABLE twitter.tweet_sentiment (
 );
 
 
-ALTER TABLE twitter.tweet_sentiment OWNER TO avnadmin;
+ALTER TABLE twitter.tweet_sentiment OWNER TO postgres;
 
 --
--- Name: tweet_type; Type: TABLE; Schema: twitter; Owner: avnadmin
+-- Name: tweet_type; Type: TABLE; Schema: twitter; Owner: postgres
 --
 
 CREATE TABLE twitter.tweet_type (
@@ -508,10 +508,10 @@ CREATE TABLE twitter.tweet_type (
 );
 
 
-ALTER TABLE twitter.tweet_type OWNER TO avnadmin;
+ALTER TABLE twitter.tweet_type OWNER TO postgres;
 
 --
--- Name: tweets; Type: TABLE; Schema: twitter; Owner: avnadmin
+-- Name: tweets; Type: TABLE; Schema: twitter; Owner: postgres
 --
 
 CREATE TABLE twitter.tweets (
@@ -529,10 +529,10 @@ CREATE TABLE twitter.tweets (
 );
 
 
-ALTER TABLE twitter.tweets OWNER TO avnadmin;
+ALTER TABLE twitter.tweets OWNER TO postgres;
 
 --
--- Name: tweets_private; Type: TABLE; Schema: twitter; Owner: avnadmin
+-- Name: tweets_private; Type: TABLE; Schema: twitter; Owner: postgres
 --
 
 CREATE TABLE twitter.tweets_private (
@@ -548,10 +548,10 @@ CREATE TABLE twitter.tweets_private (
 );
 
 
-ALTER TABLE twitter.tweets_private OWNER TO avnadmin;
+ALTER TABLE twitter.tweets_private OWNER TO postgres;
 
 --
--- Name: user_private; Type: TABLE; Schema: twitter; Owner: avnadmin
+-- Name: user_private; Type: TABLE; Schema: twitter; Owner: postgres
 --
 
 CREATE TABLE twitter.user_private (
@@ -574,10 +574,10 @@ CREATE TABLE twitter.user_private (
 );
 
 
-ALTER TABLE twitter.user_private OWNER TO avnadmin;
+ALTER TABLE twitter.user_private OWNER TO postgres;
 
 --
--- Name: twitter_private; Type: VIEW; Schema: twitter; Owner: avnadmin
+-- Name: twitter_private; Type: VIEW; Schema: twitter; Owner: postgres
 --
 
 CREATE VIEW twitter.twitter_private AS
@@ -608,10 +608,10 @@ CREATE VIEW twitter.twitter_private AS
      JOIN twitter.user_private up ON ((up.user_id = tp.user_id)));
 
 
-ALTER VIEW twitter.twitter_private OWNER TO avnadmin;
+ALTER VIEW twitter.twitter_private OWNER TO postgres;
 
 --
--- Name: users; Type: TABLE; Schema: twitter; Owner: avnadmin
+-- Name: users; Type: TABLE; Schema: twitter; Owner: postgres
 --
 
 CREATE TABLE twitter.users (
@@ -629,10 +629,10 @@ CREATE TABLE twitter.users (
 );
 
 
-ALTER TABLE twitter.users OWNER TO avnadmin;
+ALTER TABLE twitter.users OWNER TO postgres;
 
 --
--- Name: twitter_public; Type: VIEW; Schema: twitter; Owner: avnadmin
+-- Name: twitter_public; Type: VIEW; Schema: twitter; Owner: postgres
 --
 
 CREATE VIEW twitter.twitter_public AS
@@ -669,52 +669,52 @@ CREATE VIEW twitter.twitter_public AS
      JOIN twitter.users u ON ((u.user_id = t.user_id)));
 
 
-ALTER VIEW twitter.twitter_public OWNER TO avnadmin;
+ALTER VIEW twitter.twitter_public OWNER TO postgres;
 
 --
--- Name: account_history_login_private ah_lp_id; Type: DEFAULT; Schema: instagram; Owner: avnadmin
+-- Name: account_history_login_private ah_lp_id; Type: DEFAULT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.account_history_login_private ALTER COLUMN ah_lp_id SET DEFAULT nextval('instagram.account_history_login_private_ah_lp_id_seq'::regclass);
 
 
 --
--- Name: followers_private fs_id; Type: DEFAULT; Schema: instagram; Owner: avnadmin
+-- Name: followers_private fs_id; Type: DEFAULT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.followers_private ALTER COLUMN fs_id SET DEFAULT nextval('instagram.followers_private_fs_id_seq'::regclass);
 
 
 --
--- Name: following_private fg_id; Type: DEFAULT; Schema: instagram; Owner: avnadmin
+-- Name: following_private fg_id; Type: DEFAULT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.following_private ALTER COLUMN fg_id SET DEFAULT nextval('instagram.following_private_fg_id_seq'::regclass);
 
 
 --
--- Name: followers_private fs_id; Type: DEFAULT; Schema: twitter; Owner: avnadmin
+-- Name: followers_private fs_id; Type: DEFAULT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.followers_private ALTER COLUMN fs_id SET DEFAULT nextval('twitter.followers_private_fs_id_seq'::regclass);
 
 
 --
--- Name: following_private fg_id; Type: DEFAULT; Schema: twitter; Owner: avnadmin
+-- Name: following_private fg_id; Type: DEFAULT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.following_private ALTER COLUMN fg_id SET DEFAULT nextval('twitter.following_private_fg_id_seq'::regclass);
 
 
 --
--- Name: ip_audit_private ip_ap_id; Type: DEFAULT; Schema: twitter; Owner: avnadmin
+-- Name: ip_audit_private ip_ap_id; Type: DEFAULT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.ip_audit_private ALTER COLUMN ip_ap_id SET DEFAULT nextval('twitter.ip_audit_private_ip_ap_id_seq'::regclass);
 
 
 --
--- Data for Name: account_history_login_private; Type: TABLE DATA; Schema: instagram; Owner: avnadmin
+-- Data for Name: account_history_login_private; Type: TABLE DATA; Schema: instagram; Owner: postgres
 --
 
 COPY instagram.account_history_login_private (ah_lp_id, user_id, "timestamp", ip_address) FROM stdin;
@@ -847,7 +847,7 @@ COPY instagram.account_history_login_private (ah_lp_id, user_id, "timestamp", ip
 
 
 --
--- Data for Name: followers_private; Type: TABLE DATA; Schema: instagram; Owner: avnadmin
+-- Data for Name: followers_private; Type: TABLE DATA; Schema: instagram; Owner: postgres
 --
 
 COPY instagram.followers_private (fs_id, user_id, user_name, user_link) FROM stdin;
@@ -1295,7 +1295,7 @@ COPY instagram.followers_private (fs_id, user_id, user_name, user_link) FROM std
 
 
 --
--- Data for Name: following_private; Type: TABLE DATA; Schema: instagram; Owner: avnadmin
+-- Data for Name: following_private; Type: TABLE DATA; Schema: instagram; Owner: postgres
 --
 
 COPY instagram.following_private (fg_id, user_id, user_name, user_link) FROM stdin;
@@ -1961,7 +1961,7 @@ COPY instagram.following_private (fg_id, user_id, user_name, user_link) FROM std
 
 
 --
--- Data for Name: hashtags; Type: TABLE DATA; Schema: instagram; Owner: avnadmin
+-- Data for Name: hashtags; Type: TABLE DATA; Schema: instagram; Owner: postgres
 --
 
 COPY instagram.hashtags (hashtag_id, hashtag) FROM stdin;
@@ -1971,7 +1971,7 @@ COPY instagram.hashtags (hashtag_id, hashtag) FROM stdin;
 
 
 --
--- Data for Name: post_hashtag; Type: TABLE DATA; Schema: instagram; Owner: avnadmin
+-- Data for Name: post_hashtag; Type: TABLE DATA; Schema: instagram; Owner: postgres
 --
 
 COPY instagram.post_hashtag (ph_id, post_id, hashtag_id) FROM stdin;
@@ -2079,7 +2079,7 @@ COPY instagram.post_hashtag (ph_id, post_id, hashtag_id) FROM stdin;
 
 
 --
--- Data for Name: post_sentiment; Type: TABLE DATA; Schema: instagram; Owner: avnadmin
+-- Data for Name: post_sentiment; Type: TABLE DATA; Schema: instagram; Owner: postgres
 --
 
 COPY instagram.post_sentiment (ps_id, post_id, sentiment_analysis) FROM stdin;
@@ -2187,7 +2187,7 @@ COPY instagram.post_sentiment (ps_id, post_id, sentiment_analysis) FROM stdin;
 
 
 --
--- Data for Name: post_type; Type: TABLE DATA; Schema: instagram; Owner: avnadmin
+-- Data for Name: post_type; Type: TABLE DATA; Schema: instagram; Owner: postgres
 --
 
 COPY instagram.post_type (pt_id, post_id, content_type) FROM stdin;
@@ -2295,7 +2295,7 @@ COPY instagram.post_type (pt_id, post_id, content_type) FROM stdin;
 
 
 --
--- Data for Name: posts; Type: TABLE DATA; Schema: instagram; Owner: avnadmin
+-- Data for Name: posts; Type: TABLE DATA; Schema: instagram; Owner: postgres
 --
 
 COPY instagram.posts (post_id, user_id, post_url, "timestamp", caption, comments_count, likes_count) FROM stdin;
@@ -2403,7 +2403,7 @@ COPY instagram.posts (post_id, user_id, post_url, "timestamp", caption, comments
 
 
 --
--- Data for Name: posts_private; Type: TABLE DATA; Schema: instagram; Owner: avnadmin
+-- Data for Name: posts_private; Type: TABLE DATA; Schema: instagram; Owner: postgres
 --
 
 COPY instagram.posts_private (post_id, user_id, media_uri_1, media_uri_2, "timestamp", caption) FROM stdin;
@@ -2413,7 +2413,7 @@ COPY instagram.posts_private (post_id, user_id, media_uri_1, media_uri_2, "times
 
 
 --
--- Data for Name: user_private; Type: TABLE DATA; Schema: instagram; Owner: avnadmin
+-- Data for Name: user_private; Type: TABLE DATA; Schema: instagram; Owner: postgres
 --
 
 COPY instagram.user_private (user_id, user_name, name, followers, following, biography, profile_pic_uri, location, created_at, user_creation_ip, email, phone_number, birth_date, gender) FROM stdin;
@@ -2422,7 +2422,7 @@ COPY instagram.user_private (user_id, user_name, name, followers, following, bio
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: instagram; Owner: avnadmin
+-- Data for Name: users; Type: TABLE DATA; Schema: instagram; Owner: postgres
 --
 
 COPY instagram.users (user_id, user_name, id, name, followers, following, biography, profile_picture) FROM stdin;
@@ -2530,7 +2530,7 @@ COPY instagram.users (user_id, user_name, id, name, followers, following, biogra
 
 
 --
--- Data for Name: followers_private; Type: TABLE DATA; Schema: twitter; Owner: avnadmin
+-- Data for Name: followers_private; Type: TABLE DATA; Schema: twitter; Owner: postgres
 --
 
 COPY twitter.followers_private (fs_id, user_id, id, user_link) FROM stdin;
@@ -2645,7 +2645,7 @@ COPY twitter.followers_private (fs_id, user_id, id, user_link) FROM stdin;
 
 
 --
--- Data for Name: following_private; Type: TABLE DATA; Schema: twitter; Owner: avnadmin
+-- Data for Name: following_private; Type: TABLE DATA; Schema: twitter; Owner: postgres
 --
 
 COPY twitter.following_private (fg_id, user_id, id, user_link) FROM stdin;
@@ -2913,7 +2913,7 @@ COPY twitter.following_private (fg_id, user_id, id, user_link) FROM stdin;
 
 
 --
--- Data for Name: ip_audit_private; Type: TABLE DATA; Schema: twitter; Owner: avnadmin
+-- Data for Name: ip_audit_private; Type: TABLE DATA; Schema: twitter; Owner: postgres
 --
 
 COPY twitter.ip_audit_private (ip_ap_id, user_id, created_at, login_ip) FROM stdin;
@@ -3227,7 +3227,7 @@ COPY twitter.ip_audit_private (ip_ap_id, user_id, created_at, login_ip) FROM std
 
 
 --
--- Data for Name: keywords; Type: TABLE DATA; Schema: twitter; Owner: avnadmin
+-- Data for Name: keywords; Type: TABLE DATA; Schema: twitter; Owner: postgres
 --
 
 COPY twitter.keywords (keyword_id, keyword) FROM stdin;
@@ -3237,7 +3237,7 @@ COPY twitter.keywords (keyword_id, keyword) FROM stdin;
 
 
 --
--- Data for Name: tweet_keyword; Type: TABLE DATA; Schema: twitter; Owner: avnadmin
+-- Data for Name: tweet_keyword; Type: TABLE DATA; Schema: twitter; Owner: postgres
 --
 
 COPY twitter.tweet_keyword (tk_id, tweet_id, keyword_id) FROM stdin;
@@ -3345,7 +3345,7 @@ COPY twitter.tweet_keyword (tk_id, tweet_id, keyword_id) FROM stdin;
 
 
 --
--- Data for Name: tweet_sentiment; Type: TABLE DATA; Schema: twitter; Owner: avnadmin
+-- Data for Name: tweet_sentiment; Type: TABLE DATA; Schema: twitter; Owner: postgres
 --
 
 COPY twitter.tweet_sentiment (ts_id, tweet_id, sentiment_analysis) FROM stdin;
@@ -3453,7 +3453,7 @@ COPY twitter.tweet_sentiment (ts_id, tweet_id, sentiment_analysis) FROM stdin;
 
 
 --
--- Data for Name: tweet_type; Type: TABLE DATA; Schema: twitter; Owner: avnadmin
+-- Data for Name: tweet_type; Type: TABLE DATA; Schema: twitter; Owner: postgres
 --
 
 COPY twitter.tweet_type (tt_id, tweet_id, content_type) FROM stdin;
@@ -3561,7 +3561,7 @@ COPY twitter.tweet_type (tt_id, tweet_id, content_type) FROM stdin;
 
 
 --
--- Data for Name: tweets; Type: TABLE DATA; Schema: twitter; Owner: avnadmin
+-- Data for Name: tweets; Type: TABLE DATA; Schema: twitter; Owner: postgres
 --
 
 COPY twitter.tweets (tweet_id, user_id, twitter_url, entry_id, created_at, full_text, media_url, retweet_count, reply_count, like_count, quote_count) FROM stdin;
@@ -3669,7 +3669,7 @@ COPY twitter.tweets (tweet_id, user_id, twitter_url, entry_id, created_at, full_
 
 
 --
--- Data for Name: tweets_private; Type: TABLE DATA; Schema: twitter; Owner: avnadmin
+-- Data for Name: tweets_private; Type: TABLE DATA; Schema: twitter; Owner: postgres
 --
 
 COPY twitter.tweets_private (tweet_id, user_id, twitter_url, entry_id, created_at, full_text, media_url, retweet_count, like_count) FROM stdin;
@@ -3753,7 +3753,7 @@ COPY twitter.tweets_private (tweet_id, user_id, twitter_url, entry_id, created_a
 
 
 --
--- Data for Name: user_private; Type: TABLE DATA; Schema: twitter; Owner: avnadmin
+-- Data for Name: user_private; Type: TABLE DATA; Schema: twitter; Owner: postgres
 --
 
 COPY twitter.user_private (user_id, user_name, id, name, followers, following, description, profile_picture, cover_picture, location, created_at, timezone, user_creation_ip, email, phone_number, birth_date) FROM stdin;
@@ -3762,7 +3762,7 @@ COPY twitter.user_private (user_id, user_name, id, name, followers, following, d
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: twitter; Owner: avnadmin
+-- Data for Name: users; Type: TABLE DATA; Schema: twitter; Owner: postgres
 --
 
 COPY twitter.users (user_id, user_name, id, name, followers, following, description, profile_picture, cover_picture, location, created_at) FROM stdin;
@@ -3870,49 +3870,49 @@ COPY twitter.users (user_id, user_name, id, name, followers, following, descript
 
 
 --
--- Name: account_history_login_private_ah_lp_id_seq; Type: SEQUENCE SET; Schema: instagram; Owner: avnadmin
+-- Name: account_history_login_private_ah_lp_id_seq; Type: SEQUENCE SET; Schema: instagram; Owner: postgres
 --
 
 SELECT pg_catalog.setval('instagram.account_history_login_private_ah_lp_id_seq', 125, true);
 
 
 --
--- Name: followers_private_fs_id_seq; Type: SEQUENCE SET; Schema: instagram; Owner: avnadmin
+-- Name: followers_private_fs_id_seq; Type: SEQUENCE SET; Schema: instagram; Owner: postgres
 --
 
 SELECT pg_catalog.setval('instagram.followers_private_fs_id_seq', 440, true);
 
 
 --
--- Name: following_private_fg_id_seq; Type: SEQUENCE SET; Schema: instagram; Owner: avnadmin
+-- Name: following_private_fg_id_seq; Type: SEQUENCE SET; Schema: instagram; Owner: postgres
 --
 
 SELECT pg_catalog.setval('instagram.following_private_fg_id_seq', 658, true);
 
 
 --
--- Name: followers_private_fs_id_seq; Type: SEQUENCE SET; Schema: twitter; Owner: avnadmin
+-- Name: followers_private_fs_id_seq; Type: SEQUENCE SET; Schema: twitter; Owner: postgres
 --
 
 SELECT pg_catalog.setval('twitter.followers_private_fs_id_seq', 107, true);
 
 
 --
--- Name: following_private_fg_id_seq; Type: SEQUENCE SET; Schema: twitter; Owner: avnadmin
+-- Name: following_private_fg_id_seq; Type: SEQUENCE SET; Schema: twitter; Owner: postgres
 --
 
 SELECT pg_catalog.setval('twitter.following_private_fg_id_seq', 260, true);
 
 
 --
--- Name: ip_audit_private_ip_ap_id_seq; Type: SEQUENCE SET; Schema: twitter; Owner: avnadmin
+-- Name: ip_audit_private_ip_ap_id_seq; Type: SEQUENCE SET; Schema: twitter; Owner: postgres
 --
 
 SELECT pg_catalog.setval('twitter.ip_audit_private_ip_ap_id_seq', 306, true);
 
 
 --
--- Name: account_history_login_private account_history_login_private_pkey; Type: CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: account_history_login_private account_history_login_private_pkey; Type: CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.account_history_login_private
@@ -3920,7 +3920,7 @@ ALTER TABLE ONLY instagram.account_history_login_private
 
 
 --
--- Name: followers_private followers_private_pkey; Type: CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: followers_private followers_private_pkey; Type: CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.followers_private
@@ -3928,7 +3928,7 @@ ALTER TABLE ONLY instagram.followers_private
 
 
 --
--- Name: following_private following_private_pkey; Type: CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: following_private following_private_pkey; Type: CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.following_private
@@ -3936,7 +3936,7 @@ ALTER TABLE ONLY instagram.following_private
 
 
 --
--- Name: hashtags hashtags_pkey; Type: CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: hashtags hashtags_pkey; Type: CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.hashtags
@@ -3944,7 +3944,7 @@ ALTER TABLE ONLY instagram.hashtags
 
 
 --
--- Name: post_hashtag post_hashtag_pkey; Type: CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: post_hashtag post_hashtag_pkey; Type: CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.post_hashtag
@@ -3952,7 +3952,7 @@ ALTER TABLE ONLY instagram.post_hashtag
 
 
 --
--- Name: post_sentiment post_sentiment_pkey; Type: CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: post_sentiment post_sentiment_pkey; Type: CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.post_sentiment
@@ -3960,7 +3960,7 @@ ALTER TABLE ONLY instagram.post_sentiment
 
 
 --
--- Name: post_type post_type_pkey; Type: CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: post_type post_type_pkey; Type: CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.post_type
@@ -3968,7 +3968,7 @@ ALTER TABLE ONLY instagram.post_type
 
 
 --
--- Name: posts posts_pkey; Type: CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: posts posts_pkey; Type: CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.posts
@@ -3976,7 +3976,7 @@ ALTER TABLE ONLY instagram.posts
 
 
 --
--- Name: posts_private posts_private_pkey; Type: CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: posts_private posts_private_pkey; Type: CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.posts_private
@@ -3984,7 +3984,7 @@ ALTER TABLE ONLY instagram.posts_private
 
 
 --
--- Name: user_private user_private_pkey; Type: CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: user_private user_private_pkey; Type: CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.user_private
@@ -3992,7 +3992,7 @@ ALTER TABLE ONLY instagram.user_private
 
 
 --
--- Name: users users_pkey; Type: CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.users
@@ -4000,7 +4000,7 @@ ALTER TABLE ONLY instagram.users
 
 
 --
--- Name: followers_private followers_private_pkey; Type: CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: followers_private followers_private_pkey; Type: CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.followers_private
@@ -4008,7 +4008,7 @@ ALTER TABLE ONLY twitter.followers_private
 
 
 --
--- Name: following_private following_private_pkey; Type: CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: following_private following_private_pkey; Type: CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.following_private
@@ -4016,7 +4016,7 @@ ALTER TABLE ONLY twitter.following_private
 
 
 --
--- Name: ip_audit_private ip_audit_private_pkey; Type: CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: ip_audit_private ip_audit_private_pkey; Type: CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.ip_audit_private
@@ -4024,7 +4024,7 @@ ALTER TABLE ONLY twitter.ip_audit_private
 
 
 --
--- Name: keywords keywords_pkey; Type: CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: keywords keywords_pkey; Type: CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.keywords
@@ -4032,7 +4032,7 @@ ALTER TABLE ONLY twitter.keywords
 
 
 --
--- Name: tweet_keyword tweet_keyword_pkey; Type: CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: tweet_keyword tweet_keyword_pkey; Type: CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.tweet_keyword
@@ -4040,7 +4040,7 @@ ALTER TABLE ONLY twitter.tweet_keyword
 
 
 --
--- Name: tweet_sentiment tweet_sentiment_pkey; Type: CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: tweet_sentiment tweet_sentiment_pkey; Type: CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.tweet_sentiment
@@ -4048,7 +4048,7 @@ ALTER TABLE ONLY twitter.tweet_sentiment
 
 
 --
--- Name: tweet_type tweet_type_pkey; Type: CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: tweet_type tweet_type_pkey; Type: CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.tweet_type
@@ -4056,7 +4056,7 @@ ALTER TABLE ONLY twitter.tweet_type
 
 
 --
--- Name: tweets tweets_pkey; Type: CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: tweets tweets_pkey; Type: CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.tweets
@@ -4064,7 +4064,7 @@ ALTER TABLE ONLY twitter.tweets
 
 
 --
--- Name: tweets_private tweets_private_pkey; Type: CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: tweets_private tweets_private_pkey; Type: CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.tweets_private
@@ -4072,7 +4072,7 @@ ALTER TABLE ONLY twitter.tweets_private
 
 
 --
--- Name: user_private user_private_pkey; Type: CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: user_private user_private_pkey; Type: CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.user_private
@@ -4080,7 +4080,7 @@ ALTER TABLE ONLY twitter.user_private
 
 
 --
--- Name: users users_pkey; Type: CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.users
@@ -4088,7 +4088,7 @@ ALTER TABLE ONLY twitter.users
 
 
 --
--- Name: account_history_login_private account_history_login_private_user_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: account_history_login_private account_history_login_private_user_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.account_history_login_private
@@ -4096,7 +4096,7 @@ ALTER TABLE ONLY instagram.account_history_login_private
 
 
 --
--- Name: followers_private followers_private_user_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: followers_private followers_private_user_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.followers_private
@@ -4104,7 +4104,7 @@ ALTER TABLE ONLY instagram.followers_private
 
 
 --
--- Name: following_private following_private_user_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: following_private following_private_user_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.following_private
@@ -4112,7 +4112,7 @@ ALTER TABLE ONLY instagram.following_private
 
 
 --
--- Name: post_hashtag post_hashtag_hashtag_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: post_hashtag post_hashtag_hashtag_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.post_hashtag
@@ -4120,7 +4120,7 @@ ALTER TABLE ONLY instagram.post_hashtag
 
 
 --
--- Name: post_hashtag post_hashtag_post_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: post_hashtag post_hashtag_post_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.post_hashtag
@@ -4128,7 +4128,7 @@ ALTER TABLE ONLY instagram.post_hashtag
 
 
 --
--- Name: post_sentiment post_sentiment_post_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: post_sentiment post_sentiment_post_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.post_sentiment
@@ -4136,7 +4136,7 @@ ALTER TABLE ONLY instagram.post_sentiment
 
 
 --
--- Name: post_type post_type_post_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: post_type post_type_post_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.post_type
@@ -4144,7 +4144,7 @@ ALTER TABLE ONLY instagram.post_type
 
 
 --
--- Name: posts_private posts_private_user_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: posts_private posts_private_user_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.posts_private
@@ -4152,7 +4152,7 @@ ALTER TABLE ONLY instagram.posts_private
 
 
 --
--- Name: posts posts_user_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: avnadmin
+-- Name: posts posts_user_id_fkey; Type: FK CONSTRAINT; Schema: instagram; Owner: postgres
 --
 
 ALTER TABLE ONLY instagram.posts
@@ -4160,7 +4160,7 @@ ALTER TABLE ONLY instagram.posts
 
 
 --
--- Name: followers_private followers_private_user_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: followers_private followers_private_user_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.followers_private
@@ -4168,7 +4168,7 @@ ALTER TABLE ONLY twitter.followers_private
 
 
 --
--- Name: following_private following_private_user_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: following_private following_private_user_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.following_private
@@ -4176,7 +4176,7 @@ ALTER TABLE ONLY twitter.following_private
 
 
 --
--- Name: ip_audit_private ip_audit_private_user_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: ip_audit_private ip_audit_private_user_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.ip_audit_private
@@ -4184,7 +4184,7 @@ ALTER TABLE ONLY twitter.ip_audit_private
 
 
 --
--- Name: tweet_keyword tweet_keyword_keyword_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: tweet_keyword tweet_keyword_keyword_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.tweet_keyword
@@ -4192,7 +4192,7 @@ ALTER TABLE ONLY twitter.tweet_keyword
 
 
 --
--- Name: tweet_keyword tweet_keyword_tweet_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: tweet_keyword tweet_keyword_tweet_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.tweet_keyword
@@ -4200,7 +4200,7 @@ ALTER TABLE ONLY twitter.tweet_keyword
 
 
 --
--- Name: tweet_sentiment tweet_sentiment_tweet_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: tweet_sentiment tweet_sentiment_tweet_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.tweet_sentiment
@@ -4208,7 +4208,7 @@ ALTER TABLE ONLY twitter.tweet_sentiment
 
 
 --
--- Name: tweet_type tweet_type_tweet_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: tweet_type tweet_type_tweet_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.tweet_type
@@ -4216,7 +4216,7 @@ ALTER TABLE ONLY twitter.tweet_type
 
 
 --
--- Name: tweets_private tweets_private_user_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: tweets_private tweets_private_user_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.tweets_private
@@ -4224,7 +4224,7 @@ ALTER TABLE ONLY twitter.tweets_private
 
 
 --
--- Name: tweets tweets_user_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: avnadmin
+-- Name: tweets tweets_user_id_fkey; Type: FK CONSTRAINT; Schema: twitter; Owner: postgres
 --
 
 ALTER TABLE ONLY twitter.tweets

@@ -1,10 +1,10 @@
-# Twitter Instagram
+# Bytescrape
 
 ## Import db command
-psql -h twitter-forensik-twitter-forensik.d.aivencloud.com -p 15675 -d defaultdb -U avnadmin -f twitterinstagram.sql
+psql -h bytescrape-handokota-5c98.c.aivencloud.com -p 13572 -d bytescrape -U avnadmin -f bytescrape.sql
 
 ## Export db command
-pg_dump -U avnadmin -h twitter-forensik-twitter-forensik.d.aivencloud.com -p 15675 -d defaultdb > twitterinstagram.sql
+pg_dump -U avnadmin -h bytescrape-handokota-5c98.c.aivencloud.com -p 13572 -d defaultdb > bytescrape.sql
 
 
 ## How to install
